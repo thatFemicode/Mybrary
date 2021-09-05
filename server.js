@@ -7,7 +7,7 @@
 // }
 
 require('dotenv').config();
-const uri = process.env.DATABASE_URL;
+const uri = process.env.MONGODB_URI;
 console.log(uri);
 const express = require('express');
 const app = express();
