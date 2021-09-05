@@ -1,14 +1,14 @@
-// if (process.env.NODE_ENV === 'dev') {
-//   // const path = require("path");
-//   // require("dotenv").config({ path: path.resolve(__dirname, "./.env") });
-//   // require("dotenv").config({ path: path.resolve(__dirname, "../.env") });
-//   // require('dotenv').parse();
-//   require('dotenv').load();
-// }
+if (process.env.ENV === 'dev') {
+  // const path = require("path");
+  // require("dotenv").config({ path: path.resolve(__dirname, "./.env") });
+  // require("dotenv").config({ path: path.resolve(__dirname, "../.env") });
+  // require('dotenv').parse();
+  require('dotenv').config();
+}
 
-require('dotenv').config();
-const uri = process.env.DATABASE_URL;
-console.log(uri);
+// require('dotenv').config();
+// const uri = process.env.DATABASE_URL;
+// console.log(uri);
 
 const express = require('express');
 const app = express();
