@@ -36,7 +36,6 @@ mongoose
   })
   .then(() => {
     console.log('DB Connected!');
-    app.listen(3000);
   })
   .catch((err) => {
     console.log('DB Connection Error: ' + err);
@@ -48,3 +47,5 @@ mongoose
 // mongoose.connection.on('error', (error) => console.error(error));
 mongoose.connection.once('open', () => console.log('Connected to database'));
 app.use('/', indexRouter);
+
+app.listen(process.env.PORT || 3000);
