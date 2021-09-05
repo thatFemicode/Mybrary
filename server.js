@@ -1,14 +1,14 @@
-if (process.env.ENV === 'dev') {
-  // const path = require("path");
-  // require("dotenv").config({ path: path.resolve(__dirname, "./.env") });
-  // require("dotenv").config({ path: path.resolve(__dirname, "../.env") });
-  // require('dotenv').parse();
-  require('dotenv').config();
-}
+// if (process.env.ENV === 'dev') {
+//   // const path = require("path");
+//   // require("dotenv").config({ path: path.resolve(__dirname, "./.env") });
+//   // require("dotenv").config({ path: path.resolve(__dirname, "../.env") });
+//   // require('dotenv').parse();
+//   require('dotenv').config();
+// }
 
-// require('dotenv').config();
-// const uri = process.env.DATABASE_URL;
-// console.log(uri);
+require('dotenv').config();
+const uri = process.env.DATABASE_URL;
+console.log(uri);
 
 const express = require('express');
 const app = express();
@@ -29,7 +29,7 @@ const mongoose = require('mongoose');
 // Using out connection to connect to either a development or production database
 
 mongoose
-  .connect(process.env.DATABASE_URL, {
+  .connect(uri, {
     useNewUrlParser: true,
     useUnifiedTopology: true,
   })
