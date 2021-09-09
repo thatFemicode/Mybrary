@@ -50,4 +50,7 @@ router.post('/', async (req, res) => {
   //     }
   //   });
 });
+router.get('/:id', (req, res) => {
+  res.send(`Show Author ` + req.params.id);
+});
 module.exports = router;
