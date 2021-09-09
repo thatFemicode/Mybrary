@@ -24,6 +24,7 @@ connectDB();
 // Hook Up initial index router to the server by requiring it
 const indexRouter = require('./routes/index');
 const authorRouter = require('./routes/authors');
+const bookRouter = require('./routes/books');
 app.set('view engine', 'ejs');
 app.set('views', __dirname + '/views');
 // Layput file imports everything from all our pages (views)
@@ -58,6 +59,7 @@ db.on('error', (error) => console.error(error));
 db.once('open', () => console.log('Connected to database'));
 app.use('/', indexRouter);
 app.use('/authors', authorRouter);
+app.use('/books', bookRouter);
 
 app.listen(PORT, () => {
   console.log(`Server is running on http://localhost:${PORT}`);
