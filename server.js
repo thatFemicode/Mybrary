@@ -17,6 +17,7 @@ const path = require('path');
 const app = express();
 const expressLayouts = require('express-ejs-layouts');
 const bodyParser = require('body-parser');
+const methodOverride = require('method-override');
 dotenv.config({ path: '.env' });
 const PORT = process.env.PORT || 3000;
 const connectDB = require('./database/connection');
@@ -30,6 +31,7 @@ app.set('views', __dirname + '/views');
 // Layput file imports everything from all our pages (views)
 app.set('layout', 'layouts/layout');
 app.use(expressLayouts);
+app.use(methodOverride('_method'));
 app.use(express.static('public'));
 app.use(bodyParser.urlencoded({ limit: '10mb', extended: false }));
 // const uri =
